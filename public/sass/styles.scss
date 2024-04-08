@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  align-items: center;
+  border: 1px solid black;
+  .logo-container {
+    img {
+      width: 100px;
+    }
+  }
+  .nav-items > ul {
+    display: flex;
+    font-size: 24px;
+  }
+  .nav-items > ul > li {
+    padding: 10px;
+    margin: 10px;
+    list-style: none;
+  }
+}
+.body {
+  .search {
+    padding: 20px;
+  }
+  .res-container {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap:20px;
+    .res-card {
+      width: 300px;
+      max-height: 450px;
+      
+      .logo-div {
+        .res-img {
+          width: 100%;
+          max-height: 150px;
+        }
+      }
+    }
+    .res-card:hover{
+      outline: 1px solid black;
+      cursor: pointer;
+    }
+  }
+}
