@@ -5,9 +5,8 @@ const styleCard = {
 }
 
 const RestaurantCards = (props) => {/* Destructuring on the fly */
-  const { ...resData } = props.resCard;
-  const { type, data, subtype } = resData;
-  const { name, cuisines, avgRating, costForTwo, deliveryTime, cloudinaryImageId } = data;
+  const { ...resData } = props;
+  const { name, cuisines, avgRating, costForTwo, deliveryTime, cloudinaryImageId } = resData.resCard.info;
   return (
     <div className="res-card" style={styleCard}>
       <div className="logo-div">
@@ -16,7 +15,7 @@ const RestaurantCards = (props) => {/* Destructuring on the fly */
       <h3>{name}</h3>
       <h4>{cuisines.join(', ')}</h4>
       <h4>{avgRating} ⭐</h4>
-      <h4>₹ {costForTwo / 100} FOR TWO</h4>
+      <h4>{costForTwo}</h4>
       <h4>{deliveryTime} mins</h4>
     </div>
   )
