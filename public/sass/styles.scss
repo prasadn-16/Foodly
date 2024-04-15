@@ -1,3 +1,15 @@
+//Vars
+:root {
+  --rad: 0.7rem;
+  --dur: 0.3s;
+  --color-dark: #2f2f2f;
+  --color-light: #fff;
+  --color-brand: #57bd84;
+  --font-fam: "Lato", sans-serif;
+  --height: 5rem;
+  --btn-width: 6rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -11,6 +23,7 @@
   }
   .nav-items > ul {
     display: flex;
+    align-items: center;
     font-size: 24px;
   }
   .nav-items > ul > li {
@@ -18,11 +31,9 @@
     margin: 10px;
     list-style: none;
   }
-}
-.body {
-  .filter {
-    padding: 20px;
-    .filter-btn {
+  .nav-items {
+    .login-btn {
+      max-height: 50px;
       min-width: 96px;
       max-width: 292px;
       display: block;
@@ -30,14 +41,58 @@
       text-align: center;
       font-size: 18px;
       line-height: 26px;
-      background-color: #DC6B19;
+      background-color: #0c2247;
       color: #fff;
-      border:none;
+      border: none;
       position: relative;
-      border-radius: 100px;
       overflow: visible;
       margin-left: auto;
       margin-right: auto;
+      cursor: pointer;
+    }
+  }
+}
+.body {
+  .filter {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    .search {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      input[type="search"] {
+        background: var(--color-light);
+        padding: 0 1.6rem;
+        border-radius: var(--rad);
+        appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
+        transition: all var(--dur) var(--bez);
+        transition-property: width, border-radius;
+        z-index: 1;
+        position: relative;
+      }
+      .search-input {
+        font-family: var(--font-fam);
+        border: 1px solid #9b8b42;
+        color: var(--color-dark);
+        font-size: 1rem;
+        min-height: 35px;
+      }
+    }
+    .search-btn,
+    .filter-btn {
+      min-width: 96px;
+      max-width: 292px;
+      padding: 14px 32px 10px 32px;
+      text-align: center;
+      font-size: 18px;
+      line-height: 26px;
+      background-color: #dc6b19;
+      color: #fff;
+      border: none;
+      position: relative;
+      border-radius: 100px;
+      overflow: visible;
       cursor: pointer;
     }
   }
@@ -49,6 +104,8 @@
     .res-card {
       width: 300px;
       max-height: 450px;
+      background-color: #f0f0f0;
+      padding: 10px;
 
       .logo-div {
         .res-img {
@@ -62,4 +119,28 @@
       cursor: pointer;
     }
   }
+}
+.shimmer-container {
+  padding-top: 90px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  display: flex;
+  .shimmer-card {
+    background-color: #f0f0f0;
+    width: 320px;
+    height: 414px;
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
 }
