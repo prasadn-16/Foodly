@@ -1,6 +1,7 @@
 import RestaurantCards from './RestaurantCard'
 import { useState, useEffect } from 'react'
 import Shimmer from './Shimmer'
+import { Link } from "react-router-dom"
 const Body = () => {
   const [listOfRestaurants, setListofRestaurant] = useState([])
   const [filterredListOfRestaurants, setFilterredListOfRestaurants] = useState([])
@@ -8,16 +9,16 @@ const Body = () => {
   const [searchText, setSeachText] = useState("")
   useEffect(() => {
     fetchData();
-  console.log(`UsE EFFECT CALLED`)}, [])
+  }, [])
   const fetchData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     const apiResList = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-    console.log(apiResList)
     setListofRestaurant(apiResList)
     setFilterredListOfRestaurants(apiResList)
+    console.log(apiResList)
   }
 
   /* Conditional Rendering with shimmer effect   */
@@ -55,7 +56,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container ">
-        {filterredListOfRestaurants.map((card) => <RestaurantCards key={card.info.id} resCard={card} />)}
+        {filterredListOfRestaurants.map((card) => <Link key={card.info.id} to={"/restaurants/" + card.info.id} > <RestaurantCards resCard={card} /></Link>)}
       </div>
     </div>
   )
