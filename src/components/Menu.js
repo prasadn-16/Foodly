@@ -1,19 +1,10 @@
 import ShimmerMenu from './ShimmerMenu'
-import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { MENU_API } from '../utils/constants'
+import useMenu from '../utils/useMenu'
 const Menu = () => {
-    const [resInfo, setResInfo] = useState(null)
-    useEffect(() => {
-        fetchMenu();
-    }, [])
     // URL Parameter or ID of restaurant
     const { resId } = useParams()
-    const fetchMenu = async () => {
-        const data = await fetch(MENU_API + resId); //`&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER` - optional parameter of API
-        const json = await data.json();
-        setResInfo(json.data)
-    }
+    const resInfo = useMenu(resId) //custom Hook
 
     if (resInfo === null) return <ShimmerMenu />
     const { name, avgRatingString, cuisines

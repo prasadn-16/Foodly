@@ -8,14 +8,7 @@ const Body = () => {
   const [filterBtnName, setFilterBtnName] = useState("Top Rated Restaurants")
   const [searchText, setSeachText] = useState("")
   useEffect(() => {
-    const timer = setInterval(() => {
-      console.log("TIME OUT STARTED IN BODY")
-    }, 1000)
     fetchData();
-    return () => {
-      clearInterval(timer)
-      console.log("Clered")
-    }
   }, [])
   const fetchData = async () => {
     const data = await fetch(
