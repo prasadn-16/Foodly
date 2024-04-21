@@ -10,7 +10,6 @@ import Menu from './components/Menu'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 
 const AppLayout = () => {
-  console.log(useState())
   return (
     <div className="app">
       <Header></Header>

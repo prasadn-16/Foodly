@@ -8,7 +8,14 @@ const Body = () => {
   const [filterBtnName, setFilterBtnName] = useState("Top Rated Restaurants")
   const [searchText, setSeachText] = useState("")
   useEffect(() => {
+    const timer = setInterval(() => {
+      console.log("TIME OUT STARTED IN BODY")
+    }, 1000)
     fetchData();
+    return () => {
+      clearInterval(timer)
+      console.log("Clered")
+    }
   }, [])
   const fetchData = async () => {
     const data = await fetch(
@@ -18,7 +25,7 @@ const Body = () => {
     const apiResList = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     setListofRestaurant(apiResList)
     setFilterredListOfRestaurants(apiResList)
-    console.log(apiResList)
+    // console.log(apiResList)
   }
 
   /* Conditional Rendering with shimmer effect   */
@@ -43,10 +50,10 @@ const Body = () => {
           }>Search</button>
         </form>
         <button className='filter-btn' onClick={() => {
-          console.log("clicked")
+          // console.log("clicked")
           filterBtnName === "Top Rated Restaurants" ? setFilterBtnName("Reset") : setFilterBtnName("Top Rated Restaurants")
           const filteredList = listOfRestaurants.filter((res) => {
-            return res.info?.avgRating > 4
+            return res.info?.avgRating > 4.3
           })
           filterBtnName === "Reset" ? setFilterredListOfRestaurants(listOfRestaurants) : setFilterredListOfRestaurants(filteredList)
 

@@ -14,11 +14,12 @@ const Menu = () => {
         const json = await data.json();
         setResInfo(json.data)
     }
+
     if (resInfo === null) return <ShimmerMenu />
     const { name, avgRatingString, cuisines
     } = resInfo?.cards[2]?.card?.card?.info
     const { itemCards } = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-    console.log(itemCards)
+    // console.log(itemCards)
     return (
         <div className="menu">
             <div className='top-section'>

@@ -1,10 +1,9 @@
+// import User from './User'
+import UserClass from './UserClass'
 const About = () => {
-    return (
-        <>
-            <h1>This is Prasad</h1>
+    return <UserClass />
+    // <User />
 
-        </>
-    )
 }
 
 export default About;
