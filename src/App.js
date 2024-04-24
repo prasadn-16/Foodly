@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
-import '../public/sass/styles.scss';
 import Header from './components/Header'
 import Body from './components/Body'
 import About from './components/About'
@@ -14,7 +13,9 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header></Header>
-      <Outlet />
+      <div className="container mx-auto">
+        <Outlet />
+      </div>
     </div>
   )
 }

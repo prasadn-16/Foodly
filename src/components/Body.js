@@ -23,26 +23,26 @@ const Body = () => {
 
   /* Conditional Rendering with shimmer effect   */
   return listOfRestaurants.length === 0 ? <Shimmer /> : (
-    <div div className="body" >
-      <div className="filter">
-        <form role="search" className='search' onSubmit={(e) => e.preventDefault()}>
+    <div div className="body font-sans">
+      <div className="flex justify-between my-5">
+        <form role="search" className='flex gap-4' onSubmit={(e) => e.preventDefault()}>
           <label className='sr-only' htmlFor="search">Search this site</label>
           <input
+            className="placeholder:italic placeholder:text-slate-400 border-solid  block bg-white border-black-300 border-opacity-65 border rounded py-2 pl-9 pr-3 shadow focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1"
             type="search"
             role="searchbox"
             aria-description="search results will appear below"
             id="search"
-            className="search-input"
             value={searchText}
             onChange={(e) => setSeachText(e.target.value)}
           />
-          <button className='search-btn' onClick={() => {
+          <button className='px-7 text-white rounded-full bg-[#DC6B19]' onClick={() => {
             const filteredListSearch = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()))
             setFilterredListOfRestaurants(filteredListSearch)
           }
           }>Search</button>
         </form>
-        <button className='filter-btn' onClick={() => {
+        <button className='text-white px-10 rounded-full bg-[#DC6B19]' onClick={() => {
           // console.log("clicked")
           filterBtnName === "Top Rated Restaurants" ? setFilterBtnName("Reset") : setFilterBtnName("Top Rated Restaurants")
           const filteredList = listOfRestaurants.filter((res) => {
@@ -55,8 +55,8 @@ const Body = () => {
           {filterBtnName}
         </button>
       </div>
-      <div className="res-container ">
-        {filterredListOfRestaurants.map((card) => <Link key={card.info.id} to={"/restaurants/" + card.info.id} > <RestaurantCards resCard={card} /></Link>)}
+      <div className="res-container flex flex-wrap gap-4 justify-evenly my-8">
+        {filterredListOfRestaurants.map((card) => <Link className="flex " key={card.info.id} to={"/restaurants/" + card.info.id} > <RestaurantCards resCard={card} /></Link>)}
       </div>
     </div>
   )
