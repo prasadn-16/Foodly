@@ -2,7 +2,7 @@ import { CDN_URL } from "../utils/constants"
 
 const RestaurantCards = (props) => {/* Destructuring on the fly */
   const { ...resData } = props;
-  const { name, cuisines, avgRating, costForTwo, deliveryTime, cloudinaryImageId, sla } = resData.resCard.info;
+  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId, sla } = resData.resCard.info;
   return (
     <div className="rounded w-[360px] flex items-stretch flex-col justify-between gap-2 p-4 hover:shadow-2xl transition-transform hover:scale-105 hover:shadow-red-900 ">
       <div className="">

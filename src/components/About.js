@@ -1,9 +1,6 @@
-// import User from './User'
-import UserClass from './UserClass'
+import User from './User'
 const About = () => {
-    return <UserClass />
-    // <User />
-
+    return <User />
 }
 
 export default About;

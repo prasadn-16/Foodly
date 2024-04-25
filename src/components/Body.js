@@ -24,7 +24,7 @@ const Body = () => {
   /* Conditional Rendering with shimmer effect   */
   return listOfRestaurants.length === 0 ? <Shimmer /> : (
     <div div className="body font-sans">
-      <div className="flex justify-between my-5">
+      <div className="flex justify-around my-5">
         <form role="search" className='flex gap-4' onSubmit={(e) => e.preventDefault()}>
           <label className='sr-only' htmlFor="search">Search this site</label>
           <input
@@ -55,7 +55,7 @@ const Body = () => {
           {filterBtnName}
         </button>
       </div>
-      <div className="res-container flex flex-wrap gap-4 justify-evenly my-8">
+      <div className="flex flex-wrap gap-4 justify-center my-8">
         {filterredListOfRestaurants.map((card) => <Link className="flex " key={card.info.id} to={"/restaurants/" + card.info.id} > <RestaurantCards resCard={card} /></Link>)}
       </div>
     </div>
