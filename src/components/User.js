@@ -29,9 +29,10 @@ const User = () => {
             <div className="flex justify-center my-5">
                 <div className="flex flex-col rounded w-[360px] gap-6 p-4 border hover:shadow-2xl hover:shadow-900">
                     <div className="">
-                        <img className='w-full rounded' src=
-                            {userInfo.avatar_url}
-                            alt="this image contains user-image" />
+                        <img className='w-full rounded'
+                            src={userInfo.avatar_url}
+                            alt="this image contains user-image"
+                        />
                     </div>
                     <div className="flex flex-col gap-2">
                         <h3 className="text-xl font-bold text-center">{userInfo.name}</h3>

@@ -9,8 +9,8 @@ const Header = () => {
       <div className="logo-container ml-4 hover:animate-pulse">
 
         <img className="" alt="logo" src={LOGO_URL} />
-        <span class="mt-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
-          <span class="relative text-white">Prasad's</span>
+        <span className="mt-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
+          <span className="relative text-white">Prasad's</span>
         </span>
       </div>
       <div className="mr-5 flex items-center">
@@ -34,7 +34,8 @@ const Header = () => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login")
             }} className='login-btn'>
               {btnName}
-            </button></li>
+            </button>
+          </li>
         </ul>
       </div>
     </div>

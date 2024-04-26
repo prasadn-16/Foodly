@@ -16,20 +16,20 @@ const Shimmer = () => {
                 <button className='text-white px-10 rounded-full border-2 w-[237px]'>
                 </button>
             </div>
-            <div class="flex justify-start">
-                <div class="flex justify-center flex-wrap">
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
-                    <div class="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+            <div className="flex justify-start">
+                <div className="flex justify-center flex-wrap">
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
+                    <div className="border-2 w-[350px] h-[400px] p-4 m-2"></div>
                 </div>
             </div>
         </div>

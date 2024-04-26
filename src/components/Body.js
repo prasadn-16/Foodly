@@ -1,4 +1,4 @@
-import RestaurantCards from './RestaurantCard'
+import RestaurantCards, { withPureVegLabel } from './RestaurantCard'
 import { useState, useEffect } from 'react'
 import Shimmer from './Shimmer'
 import { Link } from "react-router-dom"
@@ -7,6 +7,7 @@ const Body = () => {
   const [filterredListOfRestaurants, setFilterredListOfRestaurants] = useState([])
   const [filterBtnName, setFilterBtnName] = useState("Top Rated Restaurants")
   const [searchText, setSeachText] = useState("")
+  const RestaurantCardVeg = withPureVegLabel(RestaurantCards)
   useEffect(() => {
     fetchData();
   }, [])
@@ -20,6 +21,7 @@ const Body = () => {
     setFilterredListOfRestaurants(apiResList)
     // console.log(apiResList)
   }
+  console.log("body Cards", listOfRestaurants)
 
   /* Conditional Rendering with shimmer effect   */
   return listOfRestaurants.length === 0 ? <Shimmer /> : (
@@ -55,8 +57,14 @@ const Body = () => {
           {filterBtnName}
         </button>
       </div>
-      <div className="flex flex-wrap gap-4 justify-center my-8">
-        {filterredListOfRestaurants.map((card) => <Link className="flex " key={card.info.id} to={"/restaurants/" + card.info.id} > <RestaurantCards resCard={card} /></Link>)}
+      <div className="flex flex-wrap gap-4 my-8">
+        {
+          filterredListOfRestaurants.map((card) =>
+            <Link className="flex " key={card.info.id} to={"/restaurants/" + card.info.id} >
+              {card?.info?.veg ? <RestaurantCardVeg resCard={card} /> : <RestaurantCards resCard={card} />}
+            </Link>
+          )
+        }
       </div>
     </div>
   )
