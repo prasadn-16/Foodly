@@ -1,16 +1,19 @@
 import { LOGO_URL } from "../utils/constants"
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus"
+import UserContext from "../utils/UserContext"
 const Header = () => {
   const [btnName, setBtnName] = useState("Login")
+  const { loggedInUser } = useContext(UserContext);
+  console.log(loggedInUser)
   return (
     <div className=" flex justify-between shadow-lg bg-[#A34343] px-3 text-white font-sans text-xl py-4">
       <div className="logo-container ml-4 hover:animate-pulse">
 
         <img className="" alt="logo" src={LOGO_URL} />
         <span className="mt-4 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
-          <span className="relative text-white">Prasad's</span>
+          <span className="relative text-white">Foodly</span>
         </span>
       </div>
       <div className="mr-5 flex items-center">
@@ -36,10 +39,11 @@ const Header = () => {
               {btnName}
             </button>
           </li>
+          <li className="opacity-80 hover:opacity-100 cursor-pointer hover:underline underline-offset-8 transition duration-700 ease-in-out">{loggedInUser}</li>
         </ul>
       </div>
     </div>
   )
 }
 
-export default Header;
+export default Header;  

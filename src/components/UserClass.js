@@ -19,7 +19,7 @@ class UserClass extends React.Component {
         const { name, location, bio, avatar_url } = this.state.userInfo
         return this.state.userInfo.location === "default" ? <ShimmerUser /> : (
             <div className="container">
-                <div className="card-wrapper">
+                <div className="card-wrapper">  
                     <div className="user-image">
                         <img src=
                             {avatar_url}

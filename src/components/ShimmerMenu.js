@@ -8,36 +8,66 @@ const ShimmerMenu = () => {
                 <h2 className='text-3xl text-center my-8'>Menu</h2>
             </div>
             <div className='bottom-section'>
-                <ul className='flex flex-col w-[450px] mx-auto my-10 shadow-lg shadow-red-900 p-10 rounded p-3 rounded bg-gradient-to-r from-pink-500 to-yellow-500 cursor-pointer transition-transform hover:scale-105'>
-                    <li className="text-2xl py-2 antialiased font-medium "><h3 className="">...</h3></li>
-                    <li className="text-xl py-2 "><h4>₹.... for two</h4></li>
-                    <li className="text-lg py-2">Available in stock :...</li>
-                    <li className='text-wrap py-2 text-base'>...</li>
-                </ul>
-                <ul className='flex flex-col w-[450px] mx-auto my-10 shadow-lg shadow-red-900 p-10 rounded p-3 rounded bg-gradient-to-r from-pink-500 to-yellow-500 cursor-pointer transition-transform hover:scale-105'>
-                    <li className="text-2xl py-2 antialiased font-medium "><h3 className="">...</h3></li>
-                    <li className="text-xl py-2 "><h4>₹.... for two</h4></li>
-                    <li className="text-lg py-2">Available in stock :...</li>
-                    <li className='text-wrap py-2 text-base'>...</li>
-                </ul>
-                <ul className='flex flex-col w-[450px] mx-auto my-10 shadow-lg shadow-red-900 p-10 rounded p-3 rounded bg-gradient-to-r from-pink-500 to-yellow-500 cursor-pointer transition-transform hover:scale-105'>
-                    <li className="text-2xl py-2 antialiased font-medium "><h3 className="">...</h3></li>
-                    <li className="text-xl py-2 "><h4>₹.... for two</h4></li>
-                    <li className="text-lg py-2">Available in stock :...</li>
-                    <li className='text-wrap py-2 text-base'>...</li>
-                </ul>
-                <ul className='flex flex-col w-[450px] mx-auto my-10 shadow-lg shadow-red-900 p-10 rounded p-3 rounded bg-gradient-to-r from-pink-500 to-yellow-500 cursor-pointer transition-transform hover:scale-105'>
-                    <li className="text-2xl py-2 antialiased font-medium "><h3 className="">...</h3></li>
-                    <li className="text-xl py-2 "><h4>₹.... for two</h4></li>
-                    <li className="text-lg py-2">Available in stock :...</li>
-                    <li className='text-wrap py-2 text-base'>...</li>
-                </ul>
-                <ul className='flex flex-col w-[450px] mx-auto my-10 shadow-lg shadow-red-900 p-10 rounded p-3 rounded bg-gradient-to-r from-pink-500 to-yellow-500 cursor-pointer transition-transform hover:scale-105'>
-                    <li className="text-2xl py-2 antialiased font-medium "><h3 className="">...</h3></li>
-                    <li className="text-xl py-2 "><h4>₹.... for two</h4></li>
-                    <li className="text-lg py-2">Available in stock :...</li>
-                    <li className='text-wrap py-2 text-base'>...</li>
-                </ul>
+                <div className="rounded w-6/12 mx-auto my-4 text-2xl font-semibold bg-gray-200 shadow-lg p-4 cursor-pointer">
+                    <div className="flex justify-between">
+                        <span>    <span className="font-light">( )</span></span>
+                        <span>⬇️</span>
+                    </div>
+                </div>
+                <div className="rounded w-6/12 mx-auto my-4 text-2xl font-semibold bg-gray-200 shadow-lg p-4 cursor-pointer">
+                    <div className="flex justify-between">
+                        <span>    <span className="font-light">( )</span></span>
+                        <span>⬇️</span>
+                    </div>
+                </div>
+                <div className="rounded w-6/12 mx-auto my-4 text-2xl font-semibold bg-gray-200 shadow-lg p-4 cursor-pointer">
+                    <div className="flex justify-between">
+                        <span>    <span className="font-light">( )</span></span>
+                        <span>⬇️</span>
+                    </div>
+                </div>
+                <div className="rounded w-6/12 mx-auto my-4 text-2xl font-semibold bg-gray-200 shadow-lg p-4 cursor-pointer">
+                    <div className="flex justify-between">
+                        <span>    <span className="font-light">( )</span></span>
+                        <span>⬇️</span>
+                    </div>
+                </div>
+                <div className="rounded w-6/12 mx-auto my-4 text-2xl font-semibold bg-gray-200 shadow-lg p-4 cursor-pointer">
+                    <div className="flex justify-between">
+                        <span>    <span className="font-light">( )</span></span>
+                        <span>⬇️</span>
+                    </div>
+                </div>
+                <div className="rounded w-6/12 mx-auto my-4 text-2xl font-semibold bg-gray-200 shadow-lg p-4 cursor-pointer">
+                    <div className="flex justify-between">
+                        <span>    <span className="font-light">( )</span></span>
+                        <span>⬇️</span>
+                    </div>
+                </div>
+                <div className="rounded w-6/12 mx-auto my-4 text-2xl font-semibold bg-gray-200 shadow-lg p-4 cursor-pointer">
+                    <div className="flex justify-between">
+                        <span>    <span className="font-light">( )</span></span>
+                        <span>⬇️</span>
+                    </div>
+                </div>
+                <div className="rounded w-6/12 mx-auto my-4 text-2xl font-semibold bg-gray-200 shadow-lg p-4 cursor-pointer">
+                    <div className="flex justify-between">
+                        <span>    <span className="font-light">( )</span></span>
+                        <span>⬇️</span>
+                    </div>
+                </div>
+                <div className="rounded w-6/12 mx-auto my-4 text-2xl font-semibold bg-gray-200 shadow-lg p-4 cursor-pointer">
+                    <div className="flex justify-between">
+                        <span>    <span className="font-light">( )</span></span>
+                        <span>⬇️</span>
+                    </div>
+                </div>
+                <div className="rounded w-6/12 mx-auto my-4 text-2xl font-semibold bg-gray-200 shadow-lg p-4 cursor-pointer">
+                    <div className="flex justify-between">
+                        <span>    <span className="font-light">( )</span></span>
+                        <span>⬇️</span>
+                    </div>
+                </div>
             </div>
         </div>
     )

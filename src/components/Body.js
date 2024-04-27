@@ -21,7 +21,6 @@ const Body = () => {
     setFilterredListOfRestaurants(apiResList)
     // console.log(apiResList)
   }
-  console.log("body Cards", listOfRestaurants)
 
   /* Conditional Rendering with shimmer effect   */
   return listOfRestaurants.length === 0 ? <Shimmer /> : (
@@ -57,7 +56,7 @@ const Body = () => {
           {filterBtnName}
         </button>
       </div>
-      <div className="flex flex-wrap gap-4 my-8">
+      <div className="flex flex-wrap gap-4 my-8 justify-center">
         {
           filterredListOfRestaurants.map((card) =>
             <Link className="flex " key={card.info.id} to={"/restaurants/" + card.info.id} >

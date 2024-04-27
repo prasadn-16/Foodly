@@ -1,16 +1,22 @@
+import { useState } from 'react'
 import ShimmerMenu from './ShimmerMenu'
 import { useParams } from 'react-router-dom'
 import useMenu from '../utils/useMenu'
+import RestaurantCategory from './RestaurantCategory'
 const Menu = () => {
     // URL Parameter or ID of restaurant
     const { resId } = useParams()
     const resInfo = useMenu(resId) //custom Hook
+    const [showIndex, setShowIndex] = useState(0)
 
     if (resInfo === null) return <ShimmerMenu />
     const { name, avgRatingString, cuisines
     } = resInfo?.cards[2]?.card?.card?.info
     const { itemCards } = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-    // console.log(itemCards)
+    const { cards } = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR
+    // console.log("first", cards)
+    const categoRies = cards.filter((c) => c.card?.card?.["@type"] === 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory')
+    // console.log(categoRies)
     return (
         <div className="menu">
             <div className='top-section'>
@@ -19,24 +25,16 @@ const Menu = () => {
                 </h1>
                 <h2 className='text-3xl text-center my-8'>Menu</h2>
             </div>
-            <div className='bottom-section'>
-                {itemCards.map((card) => {
-                    return (
-                        <ul className='flex flex-col w-[450px] mx-auto my-10 shadow-lg shadow-red-900 p-10 rounded p-3 rounded bg-gradient-to-r from-pink-500 to-yellow-500 cursor-pointer transition-transform hover:scale-105'
-                            key={card.card.info.id}
-                        >
-                            <li className="text-2xl py-2 antialiased font-medium ">
-                                <h3 className="">{card.card.info.name}</h3>
-                            </li>
-                            <li className="text-xl py-2 ">
-                                <h4>₹{card.card.info.price / 100 || card.card.info.defaultPrice / 100} for two</h4>
-                            </li>
-                            <li className="text-lg py-2">Available in stock : {card.card.info.inStock}</li>
-                            <li className='text-wrap py-2 text-base'>{card.card.info.description}</li>
-                        </ul>
-                    )
-                })}
-
+            <div className='bottom-section transition-all ease-out duration-300'>
+                {categoRies.map((category, index) => (
+                    // controlled component
+                    <RestaurantCategory
+                        key={category?.card?.card.title}
+                        data={category?.card?.card}
+                        showItems={index === showIndex ? true : false}
+                        setShowIndex={() => setShowIndex(index)}
+                    />
+                ))}
             </div>
         </div>
     )
