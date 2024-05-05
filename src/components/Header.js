@@ -1,12 +1,16 @@
-import { LOGO_URL } from "../utils/constants"
-import { useState, useContext } from 'react'
-import { Link } from "react-router-dom"
-import useOnlineStatus from "../utils/useOnlineStatus"
-import UserContext from "../utils/UserContext"
+import { LOGO_URL } from "../utils/constants";
+import { useState, useContext } from 'react';
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login")
   const { loggedInUser } = useContext(UserContext);
-  console.log(loggedInUser)
+  console.log("logged in User from Header", loggedInUser)
+  // Subscribing to the store using a Selector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log("from Header", cartItems);
   return (
     <div className=" flex justify-between shadow-lg bg-[#A34343] px-3 text-white font-sans text-xl py-4">
       <div className="logo-container ml-4 hover:animate-pulse">
@@ -31,7 +35,7 @@ const Header = () => {
           <li className="opacity-70 hover:opacity-100 hover:underline underline-offset-8 transition duration-700 ease-in-out">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="opacity-80 hover:opacity-100 cursor-pointer hover:underline underline-offset-8 transition duration-700 ease-in-out">Cart</li>
+          <li className="opacity-80 hover:opacity-100 cursor-pointer underline-offset-8 transition duration-700 ease-in-out"><Link to="/cart">🛒 Cart - ({cartItems.length} items)</Link></li>
           <li className="opacity-90 hover:opacity-100 hover:underline underline-offset-8 transition duration-700 ease-in-out">
             <button onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login")

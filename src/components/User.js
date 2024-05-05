@@ -21,7 +21,7 @@ const User = () => {
             bio: json.bio,
         })
     }
-    console.log(userInfo)
+    console.log("from User", userInfo)
     return (
         <>
             <h1 className='text-2xl subpixel-antialiased leading-10 text-center text-black underline underline-offset-2 decoration-indigo-500/30 line-clamp-3'>Our mission is to elevate the quality of life for the urban consumer with unparalleled convenience. Convenience is what makes us tick. It's what makes us get out of bed and say, "Let's do this."
