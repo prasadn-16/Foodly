@@ -11,7 +11,7 @@ const Error = () => {
             <a href="/">
                 Go Back to Home
             </a>
-            <h3>{err.status}:{err.statusText}</h3>
+            <h3 className="font-extrabold text-7xl">{err.status}:{err.statusText}</h3>
         </div>
 
     )
