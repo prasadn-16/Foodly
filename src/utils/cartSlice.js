@@ -7,7 +7,7 @@ const cartSlice = createSlice({
     },
     reducers: {
         addItem: (state, action) => {
-            // Redux Toolkit uses immer BTS
+            // Redux Toolkit uses immer BTS(behind the scene)
             state.items.push(action.payload);
         },
         removeItem: (state, action) => {
