@@ -19,6 +19,7 @@ const RestaurantCards = (props) => {/* Destructuring on the fly */
 
 export const withPureVegLabel = (RestaurantCards) => {
   return (props) => {
+    console.log("veg", props)
     return (
       <div className="relative">
         <label className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-green-900 relative ">
